@@ -1,30 +1,47 @@
-<!DOCTYPE HTML>
-  <head>
+<!doctype html>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBKeaTe396zqIktSBaNH3IRy5KS_powFss",
+    authDomain: "sbcs-opp-app.firebaseapp.com",
+    databaseURL: "https://sbcs-opp-app.firebaseio.com",
+    storageBucket: "sbcs-opp-app.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+
+<!-- Header -->
+<head>
     <title>Alternative Opportunity App</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
-  </head>
+</head>
 
-  <body>
+<!-- Body -->
+<body>
+    <!-- Form -->
     <h1>Create Event.</h1>
+    First name: <input type="text" name="fname" id="new-fname"><br>
+    Last name: <input type="text" name="lname" id="new-lname"><br>
+    Event: <input type="text" name="Event" id="new-event"><br>
+    Date: <input type="text" name="Date" id="new-date"><br>
+    Age: <input type="text" name="Age" id="new-name"><br>
+    Time: <input type="text" name="Time" id="new-time"><br>
+    Description: <textarea  name="Description" id="new-description"></textarea>
 
-    First name: <input type="text" name="fname"><br>
-
-    Last name: <input type="text" name="lname"><br>
-
-    Event: <input type="text" name="Event"><br>
-
-
-    Date: <input type="text" name="Date"><br>
-  Age: <input type="text" name="Age"><br>
-
-  Time: <input type="text" name="Time"><br>
-  Description: <textarea  name="Description"></textarea>
-
-  </body>
+    <!-- Button -->
     <div>
-<button id="redBtn">Submit Event!</button>
-  </div>
+        <button type="submit" id="post-button">Submit Event!</button>
+    </div>
+    
+<script src="scripts/main.js"></script>
+</body>
 
-  <footer>
+<!-- Footer -->
+<footer>
 
-  </footer>
+</footer>
+
+</html>
