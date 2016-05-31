@@ -1,7 +1,11 @@
 <!DOCTYPE HTML>
+<html>
 <head>
   <title> Alternative Opportunity App</title>
   <link rel="stylesheet" type="text/css" href="./style.css">
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <script src='http://code.jquery.com/jquery-2.0.3.min.js'></script>
+  <script src='main.js'></script>
 </head>
 
 <body>
@@ -15,10 +19,16 @@
   <button id="redBtn">Rock it!</button>
 
   <div class="orange">
+	<h1> Event Title </h1>
+	<p id="title"> where the title will go </p>
     <h1> Description </h1>
-    <p> where description will go </p>
+    <p id="description"> where description will go </p>
     <h1> Age </h1>
-    <p> where age categories will go </p>
+    <p id="age"> where age categories will go </p>
+    <h1> Category </h1>
+    <p id="category"> where category will go </p>
+    <h1> Age </h1>
+    <p id="time"> where time will go </p>
   </div>
 
 <!-- This section is dynamic -->
@@ -37,8 +47,8 @@
   <div>
     <h1 id="map">The map goes here.</h1>
   </div>
-
 </body>
 <footer>
 
 </footer>
+</html>
