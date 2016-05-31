@@ -3,9 +3,21 @@
 <head>
   <title> Alternative Opportunity App</title>
   <link rel="stylesheet" type="text/css" href="./style.css">
-  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
   <script src='http://code.jquery.com/jquery-2.0.3.min.js'></script>
-  <script src='main.js'></script>
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBKeaTe396zqIktSBaNH3IRy5KS_powFss",
+	    authDomain: "sbcs-opp-app.firebaseapp.com",
+	    databaseURL: "https://sbcs-opp-app.firebaseio.com",
+	    storageBucket: "sbcs-opp-app.appspot.com",
+	  };
+	  firebase.initializeApp(config);
+	</script>
+    <script src='main.js'></script>
 </head>
 
 <body>
@@ -32,7 +44,7 @@
   </div>
 
 <!-- This section is dynamic -->
-  <div class="red">
+  <div class="red" id="friendList">
     <h1> Whos rockin it </h1>
     <h2> Facebook friends </h2>
     <h6> Jakob Smarr </H6>

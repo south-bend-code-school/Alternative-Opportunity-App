@@ -1,9 +1,12 @@
 (function (){
   $(document).ready (initialize);
 
-   var myDataRef;
+  var myDataRef;
+  var userData;
 
   function initialize (){
+    $('#redBtn').on('click', addUser);
+
 	var description_p = document.getElementById('description');
 	var age_p = document.getElementById('age');
 	var title_p = document.getElementById('title');
@@ -31,6 +34,21 @@
 			time_p.innerHTML = time;
 		}
 	});
+
+    firebase.auth().onAuthStateChanged(function(user) {
+		userData = user;			
+	});
+  }
+
+  function addUser() {
+	if(userData) {
+		var list = document.getElementById("friendList");
+		var newName = document.createElement('h6');
+		newName.innerHTML = userData.displayName;
+		list.appendChild(newName);
+	} else {
+		alert("Please log in first on the splash page");
+	}
   }
 
   function getURLParameter(name) {
