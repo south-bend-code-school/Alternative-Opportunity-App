@@ -1,4 +1,18 @@
 <!DOCTYPE HTML>
+
+<!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBKeaTe396zqIktSBaNH3IRy5KS_powFss",
+    authDomain: "sbcs-opp-app.firebaseapp.com",
+    databaseURL: "https://sbcs-opp-app.firebaseio.com",
+    storageBucket: "sbcs-opp-app.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+
 <head>
   <title>Alternative Opportunity App</title>
   <link rel="stylesheet" type="text/css" href="./style.css">
@@ -12,7 +26,7 @@
   </div>
 
 
-    <div>
+<div>
   <h1> Rockin'</h1>
    <h5>Category</h5>
    <select>
@@ -28,35 +42,16 @@
   <option value="13-18">Thirteen to Eighteen</option>
 
 </select>
-  </div>
+</div>
 
-    <div id="event1">
-        <h2>Sports</h2>
-        <img class="heart" src="./images/superstrong-07.svg">
-
-
-      </div>
-
-    <div id="event2">
-      <h2>Art</h2>
-        <img class="heart" src="./images/strong-08.svg">
-
-      </div>
-
-      <div id="event3">
-        <h2>Music/Band</h2>
-            <img class="heart" src="./images/onfire-06.svg">
-
-      <div id="event4">
-        <h2>Camps</h2>
-        <img class="heart" src="./images/strong-08.svg">
-
+<main class="mdl-layout__content mdl-color--grey-100">
+    <section class="mdl-grid content" id="all-posts-list" style="display:none">
+        <div class="posts-container mdl-cell mdl-cell--12-col mdl-grid">
         </div>
+    </section>
+    </main>
 
-      <div id="event5">
-        <h2>ATV</h2>
-          <img class="heart" src="./images/normal-09.svg">
-
+<script src="./scripts/home.js"></script>
 </body>
 <footer>
 
