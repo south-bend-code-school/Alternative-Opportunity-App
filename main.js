@@ -12,7 +12,7 @@
 	var title_p = document.getElementById('title');
 	var category_p = document.getElementById('category');
 	var time_p = document.getElementById('time');
-
+  var rockItdiv_p = document.getElementById('rockItHeart');
 	var video_key = getURLParameter('key');
 	console.log(video_key);
 
@@ -26,17 +26,28 @@
 			var title = video['event'];
 			var category = video['category'];
 			var time = video['time'];
-
+      var votes = video['votes']
+      
 			description_p.innerHTML = description;
 			age_p.innerHTML = age;
 			title_p.innerHTML = title;
 			category_p.innerHTML = category;
 			time_p.innerHTML = time;
+
+      var rockLevel = 1;
+    	if(votes > 15) {
+    		rockLevel=4;
+    	} else if (votes > 10) {
+    		rockLevel=3;
+    	} else if (votes > 5) {
+    		rockLevel=2;
+    	}
+      rockItdiv_p.id = 'rockItHeart'+rockLevel;
 		}
 	});
 
     firebase.auth().onAuthStateChanged(function(user) {
-		userData = user;			
+		userData = user;
 	});
   }
 

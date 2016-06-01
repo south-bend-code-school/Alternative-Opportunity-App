@@ -5,7 +5,7 @@ var allPostsSection = document.getElementById('all-posts-list');
 /**
  * Creates a post element.
  */
-function createPostElement(title, date, time, description, category, key) {
+function createPostElement(title, date, time, description, category, key, votes) {
 
 var eventID = '';
 
@@ -29,10 +29,19 @@ switch(category){
 		eventID = '<div id="event">';
 		break;
 }
-		
+
+	var rockLevel = 1;
+	if(votes > 15) {
+		rockLevel=4;
+	} else if (votes > 10) {
+		rockLevel=3;
+	} else if (votes > 5) {
+		rockLevel=2;
+	}
 
   var html =
       eventID+
+			'<div id="heart'+rockLevel+'"></div>'+
       '<h2 class="category"></h2>' +
       '<h3 class="title"></h3>' +
       '<h4 class="date"></h4>' +
@@ -72,18 +81,18 @@ function startDatabaseQueries() {
     postsRef.on('child_added', function(data) {
       var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
       containerElement.insertBefore(
-          createPostElement(data.val().event, data.val().date, data.val().time, data.val().description, data.val().category, data.key),
+          createPostElement(data.val().event, data.val().date, data.val().time, data.val().description, data.val().category, data.key, data.val().votes),
           containerElement.firstChild);
     });
   };
-  
+
   fetchPosts(allPostsRef, allPostsSection);
 }
 
 // Bindings on load.
 window.addEventListener('load', function() {
 	// Listen for auth state changes
-    startDatabaseQueries(); 
+    startDatabaseQueries();
     allPostsSection.style.display = 'block';
 }, false);
 

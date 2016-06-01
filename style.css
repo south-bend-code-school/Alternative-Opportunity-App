@@ -40,8 +40,8 @@ button:hover {
   width: 100%;
   height: 400px;
   background-image: url('./images/OppAppLogo.png');
-  background-size: cover;
-  background-repeat: none;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   text-align: center;
 
@@ -53,14 +53,14 @@ button:hover {
   margin: 0;
 }
 
-#banner {
+/*#banner {
   width: 100%;
   height: 300px;
   background-image: url('./images/OppAppLogo.png');
   background-size: cover;
   background-repeat: none;
   background-position: center;
-}
+}*/
 
 #event1 {
   background-image: url("./images/sportsimg.png");
@@ -77,7 +77,7 @@ button:hover {
     background-repeat: no-repeat;
     background-origin: content-box;
     background-color: turquoise;
-    background-size: contain;
+      background-size: cover;
     background-position: center;
 }
 
@@ -87,7 +87,7 @@ button:hover {
     background-repeat: no-repeat;
     background-origin; content-box;
     background-color: teal;
-      background-size: contain;
+        background-size: cover;
       background-position: top;
 }
 
@@ -97,7 +97,7 @@ button:hover {
     background-repeat: no-repeat;
     background-origin; content-box;
     background-color: turquoise;
-      background-size: cover;
+        background-size: cover;
       background-position: top;
 }
 #event5 {
@@ -108,6 +108,7 @@ button:hover {
       background-color: teal;
       background-size: top;
       background-position: top;
+        background-size: cover;
 
 }
 input {
@@ -115,7 +116,7 @@ input {
 }
 
 #banner {
-  background-image: url("./images/oppapplogo.png");
+  background-image: url("./images/OppAppLogo.png");
   height: 250px;
   background-size: 50%;
   background-position: center;
@@ -123,17 +124,83 @@ input {
   background-color: #FC7F03;
   text-align: center;
 }
-#rockItHeart {
 
+#rockItHeart1 {
+    background-image: url("./images/normal-09.svg");
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#rockItHeart2 {
+    background-image: url("./images/strong-08.svg");
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#rockItHeart3 {
+    background-image: url("./images/superstrong-07.svg");
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#rockItHeart4 {
     background-image: url("./images/onfire-06.svg");
     height: 200px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
-
-
 }
+
+
+#heart1 {
+    background-image: url("./images/normal-09.svg");
+    float:right;
+    height: 150px;
+    width: 150px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#heart2 {
+    background-image: url("./images/strong-08.svg");
+    float:right;
+    height: 150px;
+    width: 150px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#heart3 {
+    background-image: url("./images/superstrong-07.svg");
+    float:right;
+    height: 150px;
+    width: 150px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#heart4 {
+    background-image: url("./images/onfire-06.svg");
+    float:right;
+    height: 150px;
+    width: 150px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: inline-block;
+}
+
 
 
 .redBtn {
