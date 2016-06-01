@@ -3,6 +3,20 @@
   <head>
     <link rel="stylesheet" href="./splash.css">
     <title>Alternative Opportunity App</title>
+	<script src='http://code.jquery.com/jquery-2.0.3.min.js'></script>
+	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBKeaTe396zqIktSBaNH3IRy5KS_powFss",
+	    authDomain: "sbcs-opp-app.firebaseapp.com",
+	    databaseURL: "https://sbcs-opp-app.firebaseio.com",
+	    storageBucket: "sbcs-opp-app.appspot.com",
+	  };
+	  firebase.initializeApp(config);
+	</script>
+	<script src="login.js"></script>
   </head>
 
 <body>
@@ -13,8 +27,14 @@
 
   <div>
     <h1> Welcome </h1>
+<<<<<<< HEAD
     <h2> to the ALT OPP APP where our goal is to give youth an alternative to the streets.</h2>
     <a href="./home.html"><button id="login"> login</button></a>
+=======
+    <h2> to the ALT OPP APP, our goal is to give youth an alternative to the streets.</h2>
+    <!--<a href="./home.html"><button id="login"> login</button></a>-->
+	<button onclick="facebookLogin();">Login</button>
+>>>>>>> 528a9a34f96cce09ab5d4979f5e28880520b60f1
     <a href="./home.html"><button id="signup"> sign up</button></a>
     <div>
       <h1> Login or sign up to experience our app to the fullest. </h1>

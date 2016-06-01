@@ -1,7 +1,23 @@
 <!DOCTYPE HTML>
+<html>
 <head>
   <title> Alternative Opportunity App</title>
   <link rel="stylesheet" type="text/css" href="./style.css">
+  <script src='http://code.jquery.com/jquery-2.0.3.min.js'></script>
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBKeaTe396zqIktSBaNH3IRy5KS_powFss",
+	    authDomain: "sbcs-opp-app.firebaseapp.com",
+	    databaseURL: "https://sbcs-opp-app.firebaseio.com",
+	    storageBucket: "sbcs-opp-app.appspot.com",
+	  };
+	  firebase.initializeApp(config);
+	</script>
+    <script src='main.js'></script>
 </head>
 
 <body>
@@ -15,15 +31,26 @@
   <button id="redBtn">Rock it!</button>
 
   <div class="orange">
+	<h1> Event Title </h1>
+	<p id="title"> where the title will go </p>
     <h1> Description </h1>
-    <p> where description will go </p>
+    <p id="description"> where description will go </p>
     <h1> Age </h1>
-    <p> where age categories will go </p>
+    <p id="age"> where age categories will go </p>
+    <h1> Category </h1>
+    <p id="category"> where category will go </p>
+    <h1> Time </h1>
+    <p id="time"> where time will go </p>
   </div>
 
 <!-- This section is dynamic -->
+<<<<<<< HEAD
   <div class="red">
     <h1> Who's rockin' it </h1>
+=======
+  <div class="red" id="friendList">
+    <h1> Whos rockin it </h1>
+>>>>>>> 528a9a34f96cce09ab5d4979f5e28880520b60f1
     <h2> Facebook friends </h2>
     <h6> Jakob Smarr </H6>
     <h6> Mason Schultz </h6>
@@ -36,9 +63,14 @@
 <!-- Google maps functionality needed -->
   <!-- <div>
     <h1 id="map">The map goes here.</h1>
+<<<<<<< HEAD
   </div> -->
 
+=======
+  </div>
+>>>>>>> 528a9a34f96cce09ab5d4979f5e28880520b60f1
 </body>
 <footer>
 
 </footer>
+</html>

@@ -5,7 +5,7 @@ var allPostsSection = document.getElementById('all-posts-list');
 /**
  * Creates a post element.
  */
-function createPostElement(title, date, time, description, category) {
+function createPostElement(title, date, time, description, category, key) {
 
 var eventID = '';
 
@@ -43,6 +43,8 @@ switch(category){
       '</div>';
 
   // Create the DOM element from the HTML.
+  var link = document.createElement('a');
+  link.setAttribute('href', 'opp.html?key=' + key);
   var div = document.createElement('div');
   div.innerHTML = html;
   var postElement = div.firstChild;
@@ -55,7 +57,9 @@ switch(category){
   //postElement.getElementsByClassName('location')[0].innerText = location;
   postElement.getElementsByClassName('description')[0].innerText = description;
 
-  return postElement;
+  link.appendChild(postElement);
+  //return postElement;
+  return link;
 }
 
 /**
@@ -68,7 +72,7 @@ function startDatabaseQueries() {
     postsRef.on('child_added', function(data) {
       var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
       containerElement.insertBefore(
-          createPostElement(data.val().event, data.val().date, data.val().time, data.val().description, data.val().category),
+          createPostElement(data.val().event, data.val().date, data.val().time, data.val().description, data.val().category, data.key),
           containerElement.firstChild);
     });
   };
@@ -82,3 +86,14 @@ window.addEventListener('load', function() {
     startDatabaseQueries(); 
     allPostsSection.style.display = 'block';
 }, false);
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+	console.log("logged in");
+	console.log(user.displayName);
+  } else {
+    // No user is signed in.
+	console.log("not logged in");
+  }
+});
