@@ -3,6 +3,7 @@
 
   var myDataRef;
   var userData;
+  var votes = 1;
 
   function initialize (){
     $('#redBtn').on('click', addUser);
@@ -26,8 +27,8 @@
 			var title = video['event'];
 			var category = video['category'];
 			var time = video['time'];
-      var votes = video['votes']
-      
+      votes = video['votes']
+
 			description_p.innerHTML = description;
 			age_p.innerHTML = age;
 			title_p.innerHTML = title;
@@ -53,6 +54,23 @@
 
   function addUser() {
 	if(userData) {
+    votes=votes+1;
+    var rockItdiv_p = document.getElementById('rockItHeart1');
+    if(votes > 15) {
+      rockItdiv_p = document.getElementById('rockItHeart3');
+      rockLevel=4;
+      rockItdiv_p.id = 'rockItHeart'+rockLevel;
+    } else if (votes > 10) {
+      rockItdiv_p = document.getElementById('rockItHeart2');
+      rockLevel=3;
+      rockItdiv_p.id = 'rockItHeart'+rockLevel;
+    } else if (votes > 5) {
+      rockItdiv_p = document.getElementById('rockItHeart1');
+      rockLevel=2;
+      rockItdiv_p.id = 'rockItHeart'+rockLevel;
+    }
+
+
 		var list = document.getElementById("friendList");
 		var newName = document.createElement('h6');
 		newName.innerHTML = userData.displayName;
